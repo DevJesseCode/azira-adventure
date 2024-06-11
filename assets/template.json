@@ -1,0 +1,57 @@
+{
+	"game": {
+		"assets": []
+	},
+	"player":  {
+		"id": "",
+		"level": "",
+		"exp": "",
+		"base_stats": {
+			"atk": 3,
+			"def": 3,
+			"spd": 3,
+			"sta": 3,
+			"evd": 3,
+			"cri": 0.01,
+			"crd": 1.3,
+			"hea": 10,
+			"man": 3
+		},
+		"inventory": [
+			{
+				"name": "",
+				"id": "",
+				"quantity": 0,
+				"progression": {
+					"level": 0,
+					"exp": 0,
+					"lvl_perks": [
+						{
+							"atk_add": 5,
+							"atk_mul": 0,
+							"atk_mul_comp": 0,
+							"spd_mul": 0
+						}
+					]
+				},
+				"enchants": {
+					"sharpness": 2,
+					"swift_strike": 2,
+					"energy_cast": 1,
+					"grounding": 1
+				}
+			}
+		],
+		"equipment": {
+			"weapon.primary": "weapon_id",
+			"weapon.secondary": "weapon_id",
+			"armor.head": "armor_id",
+			"armor.torso": "armor_id",
+			"armor.legs": "armor_id",
+			"armor.foot": "armor_id",
+			"accessory.neck": "accessory_id",
+			"accessory.wrist.one": "accessory_id",
+			"accessory.wrist.two": "accessory_id"
+		}
+	}
+}

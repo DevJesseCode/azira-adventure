@@ -1,0 +1,123 @@
+{
+	"player": {
+		"progression": {
+			"level": 1,
+			"exp": 0
+		},
+		"base_stats": {
+			"atk": 3,
+			"def": 3,
+			"spd": 3,
+			"sta": 3,
+			"evd": 3,
+			"cri": 0.01,
+			"crd": 1.3,
+			"hea": 10,
+			"man": 3
+		},
+		"inventory": [
+			{
+				"name": "",
+				"id": "",
+				"quantity": 0,
+				"item_type": "weapon",
+				"progression": {
+					"level": 0,
+					"exp": 0,
+					"lvl_perks": [
+						{
+							"atk_add": 5,
+							"atk_mul": 0,
+							"atk_mul_comp": 0,
+							"spd_mul": 0
+						}
+					]
+				},
+				"enchants": {
+					"sharpness": 2,
+					"swift_strike": 2,
+					"energy_cast": 1,
+					"grounding": 1
+				}
+			}
+		],
+		"equipment": {
+			"weapons": {
+				"primary": "weapon_id",
+				"secondary": "weapon_id"
+			},
+			"armor": {
+				"head": "armor_id",
+				"torso": "armor_id",
+				"legs": "armor_id",
+				"foot": "armor_id"
+			},
+			"accessories": {
+				"neck": "accessory_id",
+				"wrist": {
+					"one": "accessory_id",
+					"two": "accessory_id"
+				}
+			}
+		}
+	},
+	"enemies": {
+		"wolf1": {
+			"alias": "Normal Wolf",
+			"lvl_range": "1-5,10-20",
+			"sprite": ["./assets/enemies/w1-1.png", "./assets/enemies/wolf1-2.png", "./assets/enemies/wolf1-3.png"],
+			"skills": [
+				{"name": "damage_boost", "strength": "weak"},
+				{"name": "regeneration", "strength": "weak"}
+			],
+			"spawn_locations": {
+				"forest": 0.3,
+				"mountain_caves": {
+					"weak": 0.4,
+					"mid": 0.1
+				}
+			},
+			"base_stats": {
+				"atk": 2,
+				"def": 3,
+				"spd": 2,
+				"sta": 3,
+				"evd": 3,
+				"cri": 0.02,
+				"crd": 1.2,
+				"hea": 5,
+				"man": 3
+			}
+		},
+		"wolf_elemental_fire": {
+			"alias": "Fire Elemental Wolf",
+			"lvl_range": "15-all",
+			"sprite": ["./assets/enemies/wolf-elemental_fire.png"],
+			"skills": [
+				{"name": "damage_boost", "strength": "mid-advance"},
+				{"name": "regeneration", "strength": "mid-advance"},
+				{"name": "mana_efficiency", "strength": "mid-high"},
+				{"name": "mana_condesation", "strength": "mid-high"}
+			],
+			"spawn_locations": {
+				"volcano_grounds": 0.6,
+				"mountain_caves": {
+					"mid": 0.1,
+					"high": 0.3,
+					"advance": [0.3, ">35"]
+				}
+			},
+			"base_stats": {
+				"atk": 12,
+				"def": 11,
+				"spd": 10,
+				"sta": 10,
+				"evd": 20,
+				"cri": 0.05,
+				"crd": 1.45,
+				"hea": 15,
+				"man": 15
+			}
+		}
+	}
+}
