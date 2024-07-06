@@ -1,47 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="/assets/swords.png">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-	<style>
-	.material-symbols-outlined {
-		font-variation-settings:
-		'FILL' 0,
-		'wght' 400,
-		'GRAD' 0,
-		'opsz' 24
-	}
-	</style>
-	<link rel="stylesheet" href="./css/main.css">
-	<script src="./js/pixi.min.js"></script>
-	<script src="./js/pixi-sound.js"></script>
-	<script src="./js/classes.js"></script>
-	<script src="./js/head.js"></script>
-	<title>Azira's Adventure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Azira's Adventure - Idle RPG Game</title>
 </head>
 <body>
-	<!-- <canvas id="background">
-		Your browser does not support the Canvas API.
-	</canvas>
-	<div class="hero">
-		<h1 class="heading">Azira's Adventure <span class="material-symbols-outlined">save</span></h1>
-	</div> -->
-	<!-- Image by <a href="https://www.freepik.com/free-vector/detailed-jungle-background_13859419.htm#query=forest%20background&position=0&from_view=keyword&track=ais_user&uuid=a3aa7d61-0ba7-4fee-9750-ee1889a4c215" target="_blank">Freepik</a> -->
-	<!-- Photo by <a href="https://unsplash.com/@sakulich?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Sergei A</a> on <a href="https://unsplash.com/photos/pine-trees-field-near-mountain-under-sunset--heLWtuAN3c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a> -->
-	<!-- Photo by <a href="https://unsplash.com/@skamenar?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Steven Kamenar</a> on <a href="https://unsplash.com/photos/photography-of-tall-trees-at-daytime-MMJx78V7xS8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a> -->
-	<!-- Photo by <a href="https://unsplash.com/@danotis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Dan Otis</a> on <a href="https://unsplash.com/photos/aerial-view-of-pine-trees-in-mist-OYFHT4X5isg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a> -->
-	<!-- <a href="https://www.flaticon.com/free-icons/sword" title="sword icons" target="_blank">Sword icons created by Freepik - Flaticon</a> -->
-	<!-- Video by cottonbro studio: https://www.pexels.com/video/a-person-holding-a-lantern-inside-a-dark-tunnel-5416362/ -->
-	<!-- Photo by Ákos Szabó: https://www.pexels.com/photo/panoramic-photography-of-green-field-440731/ -->
-	<!-- Photo by Thiago Detomi: https://www.pexels.com/photo/green-valleys-under-cloudy-sky-67898/ -->
-	<!-- Photo by Frank Samet: https://www.pexels.com/photo/house-and-church-in-countryside-14280807/ -->
-	<!-- Photo by Jordan Corrales: https://www.pexels.com/photo/landscape-photography-of-volcano-923228/ -->
-	<!-- Photo by Brent Keane: https://www.pexels.com/photo/lava-flowing-1687530/ -->
-	<script src="./js/main.js"></script>
+    <main>
+        <div class="info_bar">
+            <select name="stats" id="stats" value="default" title="View stats">
+                <option value="default">...</option>
+            </select>
+        </div>
+        <div class="inventory panels"></div>
+        <div class="main_screen panels"></div>
+        <div class="additional panels"></div>
+    </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>
