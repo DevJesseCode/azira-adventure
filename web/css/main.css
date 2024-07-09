@@ -1,3 +1,7 @@
+* {
+    font-family: Nunito, Quicksand, Montserrat, 'Segoe UI', system-ui;
+}
+
 body {
     background-color: black;
     margin: 0px;
@@ -22,6 +26,8 @@ div.info_bar {
     grid-column: 1 / span 3;
     box-sizing: border-box;
     padding: .5%;
+    align-self: center;
+    font-size: large;
 }
 
 div.panels {
@@ -51,6 +57,7 @@ select#stats {
 
 div.inventory {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -68,4 +75,8 @@ div#inventory_items {
 div.inventory_slot {
     border: 1px solid white;
     border-radius: 6px;
+}
+
+div#page_nav {
+    font-size: large;
 }
