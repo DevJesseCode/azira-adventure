@@ -63,7 +63,6 @@ div#inventory_items {
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr);
     gap: 2%;
-    border: 2px solid white;
 }
 
 div.inventory_slot {
