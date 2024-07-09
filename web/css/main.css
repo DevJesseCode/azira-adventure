@@ -29,6 +29,8 @@ div.info_bar {
     align-self: center;
     font-size: large;
     font-weight: 800;
+    display: flex;
+    justify-content: space-around;
 }
 
 div.panels {
@@ -86,4 +88,17 @@ div#page_nav {
 
 span.page_nav_button {
     margin: 0px 1rem;
+    cursor: pointer;
+    transition: font-size 1s;
+}
+
+span.page_nav_button:hover {
+    font-size: xxx-large;
+}
+
+.stat_slider {
+    width: 25vw;
+    height: 1vh;
+    border-radius: .5vh;
+    background-color: white;
 }

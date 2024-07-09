@@ -14,17 +14,30 @@
 <body>
     <main>
         <div class="info_bar">
-            <label for="stats">Stats: </label>
-            <select name="stats" id="stats" value="default" title="View stats">
-                <option value="default">...</option>
-            </select>
+            <div style="
+    font-size: small;
+    font-weight: 900;
+" class="hud_stat_container">
+                <span>Mana:</span>
+                <div class="stat_slider">
+                    <div class="stat_slider_val"></div>
+                </div>
+                <span><span>50</span>/<span>100</span></span>
+            </div>
+            <div>
+                <label for="stats">Stats: </label>
+                <select name="stats" id="stats" value="default" title="View stats">
+                    <option value="default">...</option>
+                </select>
+            </div>
         </div>
         <div class="inventory panels">
             <div id="inventory_items"></div>
             <div id="page_nav">
-                <span class="page_nav_button"><</span>
-                <span>Page: <span id="inventory_page_num"></span></span>
-                <span class="page_nav_button">></span>
+                <span class="page_nav_button">
+                    << /span>
+                        <span>Page: <span id="inventory_page_num"></span></span>
+                        <span class="page_nav_button">></span>
             </div>
         </div>
         <div class="main_screen panels"></div>
