@@ -63,7 +63,7 @@ function init() {
         obj.selector.appendChild(option)
         obj[stat_name] = option
         return obj
-    }, {})
+    }, {});
 
     (function () {
         let items_container = document.querySelector("div#inventory_items")
