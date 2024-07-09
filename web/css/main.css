@@ -48,7 +48,7 @@ select#stats {
     align-content: center;
 }
 
-div.inventory_items {
+div#inventory_items {
     display: grid;
     width: 100%;
     aspect-ratio: 1;
