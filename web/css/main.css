@@ -27,7 +27,8 @@ div.info_bar {
 div.panels {
     display: flex;
     justify-content: center;
-    padding: 2%;
+    width: calc(100vw / 3);
+    padding: 3%;
     box-sizing: border-box;
     background-color: transparent;
     transition: all 1s ease-in;
@@ -48,17 +49,23 @@ select#stats {
     align-content: center;
 }
 
+div.inventory {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 div#inventory_items {
     display: grid;
-    width: 100%;
     aspect-ratio: 1;
+    width: 90%;
+    height: auto;
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(8, 1fr);
-    gap: 1%;
     border: 2px solid white;
 }
 
 div.inventory_slot {
     border: 1px solid white;
-    border-radius: 3px;
+    border-radius: 6px;
 }
