@@ -31,7 +31,7 @@ div.panels {
     padding: 3%;
     box-sizing: border-box;
     background-color: transparent;
-    transition: all 1s ease-in;
+    transition: all .5s ease-in;
 }
 
 div.panels:hover {
@@ -58,10 +58,11 @@ div.inventory {
 div#inventory_items {
     display: grid;
     aspect-ratio: 1;
-    width: 90%;
+    width: 100%;
     height: auto;
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2%;
     border: 2px solid white;
 }
 

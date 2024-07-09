@@ -25,6 +25,8 @@ const stat_monitor = {
     }
 }
 
+const inventory = new Array(8).fill(null).map(page => new Array(36).fill(null))
+
 function update_stat(type, stats) {
     if (!stat_monitor[type]) return false;
 
@@ -68,7 +70,7 @@ function init() {
     (function () {
         let items_container = document.querySelector("div#inventory_items")
         let doc_frag = document.createDocumentFragment()
-        for (let i = 0; i < 64; i++) {
+        for (let i = 0; i < 36; i++) {
             const inventory_slot = document.createElement("div")
             // const item_icon = document.createElement("img")
             // const item_count = document.createElement("p")
