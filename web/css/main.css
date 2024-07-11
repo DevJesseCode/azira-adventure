@@ -96,6 +96,11 @@ span.page_nav_button:hover {
     font-size: xxx-large;
 }
 
+.hud_stat_container {
+    font-size: small;
+    font-weight: 900;
+}
+
 .stat_slider {
     width: 25vw;
     height: 1vh;
