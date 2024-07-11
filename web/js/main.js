@@ -56,6 +56,7 @@ function capitalize(str) {
 }
 
 function init() {
+    document.body.setAttribute("style", "--current-health: #080; --current-mana: #080")
     stat_monitor.elements = Object.entries(stat_monitor.base).reduce((obj, [stat_name, stat_value], i) => {
         if (!i) {
             obj.selector = document.querySelector("select#stats")
@@ -65,20 +66,24 @@ function init() {
         obj.selector.appendChild(option)
         obj[stat_name] = option
         return obj
-    }, {});
+    }, {})
+    stat_monitor.current = {
+        health: stat_monitor.health + stat_monitor.equipment.health,
+        mana: stat_monitor.mana + stat_monitor.equipment.mana
+    };
 
-    (function () {
-        let items_container = document.querySelector("div#inventory_items")
-        let doc_frag = document.createDocumentFragment()
+    (function (d) {
+        let items_container = d.querySelector("div#inventory_items")
+        let doc_frag = d.createDocumentFragment()
         for (let i = 0; i < 36; i++) {
-            const inventory_slot = document.createElement("div")
-            // const item_icon = document.createElement("img")
-            // const item_count = document.createElement("p")
+            const inventory_slot = d.createElement("div")
+            // const item_icon = d.createElement("img")
+            // const item_count = d.createElement("p")
             inventory_slot.classList.add("inventory_slot")
             doc_frag.appendChild(inventory_slot)
         }
         items_container.appendChild(doc_frag)
-    })()
+    })(document)
 }
 
 document.addEventListener("DOMContentLoaded", init)

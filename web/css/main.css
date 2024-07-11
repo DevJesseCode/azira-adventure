@@ -17,7 +17,7 @@ main {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px calc(100vh - 40px);
+    grid-template-rows: 10vh 90vh;
     width: 100vw;
     height: 100vh;
 }
@@ -30,11 +30,13 @@ div.info_bar {
     font-size: large;
     font-weight: 800;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 div.panels {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     width: calc(100vw / 3);
     padding: 3%;
@@ -44,7 +46,7 @@ div.panels {
 }
 
 div.panels:hover {
-    background-color: #fff2;
+    background-color: #ffffff08;
 }
 
 select#stats {
@@ -60,10 +62,10 @@ select#stats {
 }
 
 div.inventory {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+}
+
+div.inventory > div {
+    width: 100%;
 }
 
 div#inventory_items {
@@ -82,28 +84,52 @@ div.inventory_slot {
 }
 
 div#page_nav {
-    font-size: xx-large;
+    font-size: 2.25rem;
     font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    width: 100%;
 }
 
 span.page_nav_button {
     margin: 0px 1rem;
     cursor: pointer;
-    transition: font-size 1s;
+    text-shadow: none;
+    transition: font-size 1s, text-shadow 1s ease-out;
 }
 
 span.page_nav_button:hover {
-    font-size: xxx-large;
+    font-size: 3.2rem;
+    text-shadow: 0px 0px 3rem white, 0px 0px 2.5rem white, 3px 3px .4rem white;
 }
 
 .hud_stat_container {
     font-size: small;
     font-weight: 900;
+    display: grid;
+    grid-template-columns: auto clamp(200px, 25vw, 250px) auto;
+    align-items: center;
+    column-gap: .5rem;
 }
 
 .stat_slider {
-    width: 25vw;
+    width: 100%;
     height: 1vh;
     border-radius: .5vh;
     background-color: white;
+}
+
+.stat_slider_val {
+    border-radius: inherit;
+    height: 100%;
+}
+
+.current_health {
+    background-color: var(--current-health);
+}
+
+.current_mana {
+    background-color: var(--current-mana);
 }
