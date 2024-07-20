@@ -2,8 +2,18 @@
     font-family: Nunito, Quicksand, Montserrat, 'Segoe UI', system-ui;
 }
 
+img.pixel-art {
+    image-rendering: optimizeSpeed;             /* Older versions of FF */
+    image-rendering: -moz-crisp-edges;          /* FF 6.0+ */
+    image-rendering: -webkit-optimize-contrast; /* Safari */
+    image-rendering: -o-crisp-edges;            /* OS X & Opera (12.02+) */
+    image-rendering: pixelated;                 /* Chrome (49+) and FF */
+    image-rendering: crisp-edges;               /* CSS4 */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE (6+) */
+}
+
 body {
-    background-color: black;
+    background-color: #333;
     margin: 0px;
 }
 
@@ -26,11 +36,25 @@ div.info_bar {
     grid-column: 1 / span 3;
     box-sizing: border-box;
     padding: .5%;
-    align-self: center;
+    align-items: center;
     font-size: large;
     font-weight: 800;
     display: flex;
     justify-content: space-between;
+}
+
+div.info_bar > :nth-child(2) {
+    display: flex;
+    align-items: baseline;
+    gap: .5rem;
+}
+
+[jdropdown].dropdown_open {
+    margin-top: clamp(50px, 8vh, 70px);
+}
+
+[jdropdown].dropdown_open .drop_item {
+    background-color: black;
 }
 
 div.panels {
@@ -62,17 +86,23 @@ select#stats {
 }
 
 div.inventory {
+    flex-direction: column;
 }
 
-div.inventory > div {
-    width: 100%;
+div.inventory > #inventory_container {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width: 90%;
+    gap: 10%;
 }
 
-div#inventory_items {
+div.inventory > #inventory_container > div {
     display: grid;
     aspect-ratio: 1;
     width: 100%;
     height: auto;
+    flex-shrink: 0;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr);
     gap: 2%;
@@ -81,6 +111,21 @@ div#inventory_items {
 div.inventory_slot {
     border: .15rem solid white;
     border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.inventory_item_count {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    line-height: 1;
+    margin: 0px;
+    font-size: .9em;
+    color: cyan;
+    user-select: none;
 }
 
 div#page_nav {

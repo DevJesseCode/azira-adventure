@@ -9,6 +9,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
     </style>
+    <script src="./js/classes.js" defer></script>
+    <script src="./js/jdropdown.js" defer></script>
 </head>
 
 <body>
@@ -28,19 +30,17 @@
             </div>
             <div>
                 <label for="stats">Stats: </label>
-                <select name="stats" id="stats" value="default" title="View stats">
-                    <option value="default">...</option>
-                </select>
+                <div id="stats" jdropdown>
+                    <div>...</div>
+                </div>
             </div>
         </div>
         <div class="inventory panels">
-            <div>
-                <div id="inventory_items"></div>
-                <div id="page_nav">
-                    <span class="page_nav_button"><</span>
-                    <span>Page: <span id="inventory_page_num"></span></span>
-                    <span class="page_nav_button">></span>
-                </div>
+            <div id="inventory_container"></div>
+            <div id="page_nav">
+                <span class="page_nav_button"><</span>
+                <span>Page: <span id="inventory_page_num"></span></span>
+                <span class="page_nav_button">></span>
             </div>
         </div>
         <div class="main_screen panels">
