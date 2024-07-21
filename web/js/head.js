@@ -4,6 +4,11 @@ function wait(time = 1000) {
     })
 }
 
+function capitalize(str) {
+    if (typeof str !== "string") return str
+    return str.split("_").map(w => (w[0] || " ").toUpperCase() + (w || "  ").slice(1)).join(" ").trim()
+}
+
 function generate_random_string(length) {
 	const string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890#$%&*()^-=+.?"
 	let id = ""

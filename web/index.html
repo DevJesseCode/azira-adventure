@@ -9,7 +9,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
     </style>
+    <script src="./js/head.js"></script>
     <script src="./js/classes.js" defer></script>
+    <script src="./js/type_anim.js" defer></script>
     <script src="./js/jdropdown.js" defer></script>
 </head>
 
@@ -38,9 +40,9 @@
         <div class="inventory panels">
             <div id="inventory_container"></div>
             <div id="page_nav">
-                <span class="page_nav_button"><</span>
-                <span>Page: <span id="inventory_page_num"></span></span>
-                <span class="page_nav_button">></span>
+                <span class="page_nav_button" onclick="game.inventory.scroll_controller.scroll('l')"><</span>
+                <span>Page: <span id="inventory_page_num">1</span></span>
+                <span class="page_nav_button" onclick="game.inventory.scroll_controller.scroll('r')">></span>
             </div>
         </div>
         <div class="main_screen panels">
