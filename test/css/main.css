@@ -1,0 +1,259 @@
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.flex {
+	display: flex;
+}
+
+.center {
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+	cursor: pointer;
+}
+
+body {
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	user-select: none;
+	font-family: system-ui;
+}
+
+main {
+	display: grid;
+	grid-template-rows: 10vh 90vh;
+	background-image: url("../assets/images/steven-kamenar-MMJx78V7xS8-unsplash.jpg");
+	background-position: 50% 50%;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+main::before {
+	display: block;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(.15rem);
+}
+
+main > div {
+	position: relative;
+}
+
+div.top-bar {
+	padding: 0px 1%;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	color: white;
+	height: 10vh;
+	font-weight: 300;
+	background-color: #000a;
+	backdrop-filter: blur(.3rem);
+	box-shadow: 0px 0px .75rem 0px white;
+	z-index: 1;
+}
+
+div.top-bar > h1 {
+	opacity: 0;
+	margin: 0px;
+	font-weight: 500;
+	font-size: 2rem;
+	text-shadow: 0px 0px .2rem black, 0px 0px .2rem black, 0px 0px .5rem white, 0px 0px .5rem white;
+	animation: slide-in-left 1.5s .75s ease-out forwards;
+}
+
+div.top-bar > div {
+	opacity: 0;
+	margin-right: .9rem;
+	animation: slide-in-left 1.5s 2s ease-out forwards;
+}
+
+.save-icon {
+	color: black;
+	font-size: 2.5rem;
+	cursor: pointer;
+	transition: scale 1s ease-out;
+	text-shadow: -.2rem -.1rem .5rem white, .2rem .2rem .3rem white;
+}
+
+.save-icon::after {
+	scale: 0;
+	width: auto;
+	display: block;
+	position: absolute;
+	content: "Load save";
+	background: white;
+	border-radius: .4rem;
+	padding: 5% 12%;
+	left: -25%;
+	text-align: center;
+	font-size: .7rem;
+	font-family: system-ui;
+	transition: scale .5s ease-in;
+	box-shadow: .2rem .2rem .4rem 0px black;
+}
+
+.save-icon:nth-child(2)::after {
+	content: "Save game";
+}
+
+.save-icon:hover {
+	scale: 1.2;
+}
+
+.save-icon:hover::after {
+	scale: 1;
+}
+
+.screen-container {
+	display: grid;
+	grid-template-rows: repeat(3, 100%);
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+
+.screen {
+/* 	height: 100%; */
+}
+
+.load-game, .save-game {
+	> div {
+		display: flex;
+		flex-direction: column;
+		box-shadow: .2rem .2rem .5rem #466, -.2rem -.2rem .5rem #496;
+		background-color: #0004;
+		box-sizing: border-box;
+		position: relative;
+		padding: 5%;
+		height: 80%;
+		width: 80%;
+	}
+	h1 {
+		text-shadow: 0px 0px .2rem black, 0px 0px .2rem black, 0px 0px .4rem white, 0px 0px .4rem white;
+		font-weight: 300;
+		color: white;
+		margin: 0px;
+	}
+	hr {
+		color: white;
+		width: 100%;
+		box-shadow: .3rem .3rem .1rem 0px black;
+	}
+}
+
+.load-game::before, .save-game::before {
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	backdrop-filter: brightness(130%);
+}
+
+.main-view {
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(3, 100%);
+	grid-auto-rows: 100%;
+	overflow-x: scroll;
+	scrollbar-width: none;
+	> div {
+		position: relative;
+		height: 100%;
+	}
+}
+
+.main-content {
+	opacity: 0;
+	animation: show 2s 2s ease-out forwards;
+}
+
+.welcome {
+	text-align: center;
+	font-weight: 600;
+	text-shadow: 0px 0px .1rem white, 0px 0px .7rem white;
+	a {
+		color: #d0ffff;
+		font-weight: 600;
+		text-shadow: 0px 0px 0.2rem black, 0px 0px 0.2rem black, 0px 0px .1rem white, 0px 0px .7rem white;
+		transition: text-shadow .5s ease-out;
+	}
+}
+
+.welcome a:hover {
+	text-shadow:	0px 0px 0.2rem black, 0px 0px 0.2rem black,
+					0px 0px .3rem white, 0px 0px .3rem white,
+					0px 0px 1rem white, 0px 0px 1rem white;
+}
+
+.stats {
+	padding: 10%;
+	background: #aa88;
+	box-sizing: border-box;
+	> div {
+		width: 70%;
+		h1 {
+			margin-bottom: 0px;
+		}
+		hr {
+			color: white;
+			box-shadow: -.4rem 0px .4rem black, .4rem 0px .4rem black;
+		}
+		> div {
+			display: grid;
+			grid-template-columns: 30% auto;
+			grid-auto-rows: 1fr;
+			align-items: center;
+			margin-top: 1.2rem;
+			overflow: hidden;
+			padding: 3%;
+			background-color: inherit;
+			box-shadow: .2rem .2rem .7rem black, -.1rem -.1rem .7rem white;
+			p {
+				margin: 0px;
+				line-height: 1.6;
+				border-bottom: 1px solid black;
+			}
+		}
+	}
+}
+
+.saves {
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: #fff6 #fff2;
+	position: relative;
+	background: #0008;
+	margin-top: 1%;
+	height: 75%;
+	padding: 3%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-rows: 15%;
+	flex-grow: 1;
+	color: wheat;
+}
