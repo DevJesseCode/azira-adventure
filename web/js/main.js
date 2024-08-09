@@ -5,7 +5,7 @@
 
     const game = {
         main_screen: document.querySelector(".main_screen"),
-        busy: false,
+        busy: true,
         tick_array: null,
         tick_index: 0,
         tick_arrays: {
@@ -17,9 +17,9 @@
                     "\\Azira\\:\"I am but a pawn\""
                     ]
                 },
-                { type: EventTypes.TEXT, content: "You hear the voice of someone familiar" },
-                { type: EventTypes.TEXT, content: "The voice of your friend, Jesse" },
-                { type: EventTypes.TEXT, content: "\\Jesse\\:\"You're awake. Feeling better?\"" }
+                { type: EventTypes.TEXT, content: "You hear the voice of someone calling out to you" },
+                { type: EventTypes.TEXT, content: "\\Jesse\\:\"Azira, you're finally awake.\"" },
+                { type: EventTypes.TEXT, content: "It's the voice of your friend, Matthew." }
             ]
         },
         stat_monitor: {
@@ -112,19 +112,17 @@
                         text = event.content
                     }
 
+                    let type_args = [ this.main_content, "textContent" ]
                     text = text.split(":")
                     switch (text[0]) {
                         case "\\Azira\\":
-                            this.main_screen.className = "main_screen panels azira-text"
-                            typewrite(text[1], this.main_screen).then(() => { this.busy = false })
+                            typewrite(text[1], ...type_args, "azira-text").then(() => { this.busy = false })
                             break
                         case "\\Jesse\\":
-                            this.main_screen.className = "main_screen panels jesse-text"
-                            typewrite(text[1], this.main_screen).then(() => { this.busy = false })
+                            typewrite(text[1], ...type_args, "jesse-text").then(() => { this.busy = false })
                             break
                         default:
-                            this.main_screen.className = "main_screen panels"
-                            typewrite(text.join(), this.main_screen).then(() => { this.busy = false })
+                            typewrite(text.join(), ...type_args, "").then(() => { this.busy = false })
                     }
                     break
                 default:
@@ -135,11 +133,28 @@
             this.tick_array = ta
             this.tick_index = 0
         },
+        clear_main_screen() {
+            this.busy = true
+            this.main_content = document.createElement("p")
+            this.main_content.textContent = "Click to continue..."
+            setTimeout(() => this.main_screen.setAttribute("style", "transition: all 3s ease-out; opacity: 0"), 3000)
+            setTimeout(() => this.main_screen.setAttribute("style", "transition: none; opacity: 0; transform: translateX(-30%)"), 6000)
+            setTimeout(() => {
+                this.main_screen.innerHTML = ""
+                this.main_screen.appendChild(this.main_content)
+                this.main_screen.setAttribute("style", "transition: all 3s ease-out; opacity: 1")
+                setTimeout(() => {
+                    this.main_screen.removeAttribute("style")
+                    this.busy = false
+                }, 4000)
+            }, 7000)
+        },
         init() {
             document.body.setAttribute("style", "--current-health: #080; --current-mana: #080")
             this.inventory = new InventoryHandler(document.querySelector("#inventory_container"))
             this.stat_monitor.init()
             this.load_tick_array(this.tick_arrays.welcome)
+            this.clear_main_screen()
             this.main_screen.addEventListener("click", this.event_handler.main_click_handler.bind(this))
 
             this.inventory.scroll_controller = {
